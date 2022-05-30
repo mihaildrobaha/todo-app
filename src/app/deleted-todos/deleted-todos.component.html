@@ -1,0 +1,10 @@
+<div class="wrapper">
+  <h2>Deleted Todos</h2>
+  <app-todo-card [ngClass]="{'opacity': todo.isDeleted}"
+  *ngFor="let todo of deletedTodos; let i = index"
+  [todo]="todo"
+  [i]="i"
+  >
+  </app-todo-card>
+  <app-void-todo-card *ngIf="!deletedTodos.length"></app-void-todo-card>
+</div>

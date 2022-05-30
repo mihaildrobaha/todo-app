@@ -1,0 +1,72 @@
+<div *ngIf="todo" class="todo-card-container">
+  <div class="todo-card"
+  [ngClass]="{'background-active': todo, 'background-completed': todo.isCompleted, 'background-deleted': todo.isDeleted}"
+  >
+
+    <div *ngIf="todo.isCompleted === false && todo.isEdit === false" class="checkbox">
+      <mat-checkbox 
+      class="example-margin"
+      (click)="completeTodo()"
+      [disabled]="todo.isDeleted"
+      matTooltip="Complete Todo"
+      [matTooltipDisabled]="todo.isDeleted"
+      >
+    </mat-checkbox>
+    </div>
+
+    <div *ngIf="todo.isCompleted && todo.isEdit === false" class="checkbox">
+      <mat-checkbox class="example-margin" 
+      (click)="recoverTodo()"
+      [checked]="todo.isCompleted"
+      [disabled]="todo.isDeleted"
+      matTooltip="Recover to Active Todo"
+      [matTooltipDisabled]="todo.isDeleted"
+      >
+    </mat-checkbox>
+    </div>
+
+    <div *ngIf="!todo.isEdit" class="content" (dblclick)="editTodo()" matTooltip="Double Click: Edit Todo">
+      {{todo.textContent}}
+    </div>
+
+    <div *ngIf="todo.isEdit" class="edit-todo">
+      <input #myInputRef matInput type="text" 
+      [(ngModel)]="todo.textContent" 
+      (keyup.enter)="openPopupWindow()" 
+      (keyup.enter)="editTodo()"
+      >
+      <button matTooltip="Edit Todo" mat-fab color="accent" aria-label="Example icon button with a delete icon"
+      (click)="editTodo()"
+      (click)="openPopupWindow()"
+      >
+        <mat-icon>edit</mat-icon>
+      </button>
+    </div>
+
+    <div *ngIf="todo.isDeleted === false && todo.isEdit === false">
+      <button matTooltip="Delete Todo" mat-fab color="primary" aria-label="Example icon button with a delete icon"
+      (click)="deleteTodo()"
+      >
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+
+    <div *ngIf="todo.isDeleted && todo.isEdit === false" class="full-delete">
+      <button matTooltip="Delete Permanently" mat-fab color="primary" aria-label="Example icon button with a delete icon"
+      (click)="deleteTodoPermanently()"
+      >
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+
+    <div *ngIf="todo.isDeleted && todo.isEdit === false" class="recover-delete-todo">
+      <button matTooltip="Recover Todo" mat-fab color="accent" aria-label="Example icon button with a delete icon"
+      (click)="recoverDeletedTodo()"
+      >
+        <mat-icon>history</mat-icon>
+      </button>
+    </div>
+
+  </div>
+
+</div>

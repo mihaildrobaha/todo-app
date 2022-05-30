@@ -1,0 +1,95 @@
+:host {
+  display: flex;
+}
+.void-todo {
+
+  opacity: 0.3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  flex: 0 1 500px;
+  border-radius: 10px;
+  background-color:#303030;
+  border: 2px dashed #C0C0C0;
+  padding: 15px;
+
+  &__button {
+    position: relative;
+    overflow:hidden;
+    height:56px;
+    width:56px;
+    border-radius: 50%;
+    background-color: #C0C0C0;
+  }
+
+  &__content {
+    border-radius: 5px;
+    position: relative;
+    overflow:hidden;
+    height:20px;
+    width:50%;
+    background-color: #C0C0C0;
+  }
+}
+
+.animation-long{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width:50px;
+  border-radius: 15px;
+  height: 150%;
+  background-color: #ffffff;
+  opacity: 0.3;
+  box-shadow: 0 0 30px 30px #ffffff;
+  animation-name: animation;
+  animation-duration: 5s;
+  animation-iteration-count:infinite;
+  animation-timing-function: linear
+}
+
+.animation{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width:10px;
+  height: 150%;
+  background-color: #ffffff;
+  opacity: 0.3;
+  box-shadow: 0 0 10px 15px #ffffff;
+  animation-name: animation;
+  animation-duration: 5s;
+  animation-iteration-count:infinite;
+  animation-timing-function: linear
+}
+
+
+@keyframes animation {
+  0% {
+    transform:translateX(-3000%);
+  }
+
+  50% {
+  }
+
+  100% {
+    transform: translateX(3000%);
+  }
+}
+
+@keyframes animation-long {
+  0% {
+    transform:translateX(-5000%);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(5000%);
+  }
+}

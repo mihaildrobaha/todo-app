@@ -1,0 +1,20 @@
+<div class="header">
+
+  <div class="header__input">
+    <mat-form-field class="example-form-field" appearance="outline">
+      <mat-label>New Todo...</mat-label>
+      <input class="header__input-color" matInput type="text" [(ngModel)]="textInput" (keyup.enter)="addTodo()">
+      <button *ngIf="textInput" matSuffix mat-icon-button aria-label="Clear" (click)="textInput=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+
+  <div class="header__button">
+    <button mat-raised-button
+     color="primary"
+    (click)="addTodo()"
+    >Add Todo</button>
+  </div>
+
+</div>

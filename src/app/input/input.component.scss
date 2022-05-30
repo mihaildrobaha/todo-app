@@ -1,0 +1,12 @@
+.header{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  &__input-color{
+    color: aliceblue;
+  }
+  &__button{
+    margin-left: 15px;
+    margin-top: 11px;
+  }
+}

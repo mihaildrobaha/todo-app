@@ -1,0 +1,59 @@
+.todo-card-container{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  .todo-card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    border: 1px solid rgb(137, 137, 137);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    flex: 0 1 500px;
+    position: relative;
+    .recover-delete-todo{
+      position: absolute;
+      top: 15px;
+      right: -70px;
+    }
+    .content{
+      color: antiquewhite;
+      padding: 0px 15px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  }
+}
+
+:host ::ng-deep .mat-checkbox-inner-container{
+  height: 56px;
+  width: 56px;
+}
+
+:host ::ng-deep .mat-checkbox-frame {
+  border-radius: 50%;
+}
+
+:host ::ng-deep .mat-checkbox-background{
+  border-radius: 28px;
+}
+
+.background-active{
+  background: linear-gradient(90deg, rgba(255,255,255,0), rgb(21, 63, 13));
+}
+.background-completed{
+  background: linear-gradient(90deg, rgba(255,255,255,0), rgb(64, 73, 8));
+}
+.background-deleted{
+  background: linear-gradient(90deg, rgba(255,255,255,0), rgb(136, 136, 136));
+}
+
+.edit-todo{
+  display: flex;
+  color: antiquewhite;
+  font-size: 18px;
+  padding: 0px 15px;
+  justify-content: center;
+}

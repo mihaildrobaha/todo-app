@@ -1,0 +1,10 @@
+<div class="wrapper">
+  <h2>Completed Todos</h2>
+  <app-todo-card
+  *ngFor="let todo of completedTodos; let i = index"
+  [todo]="todo"
+  [i]="i"
+  >
+  </app-todo-card>
+  <app-void-todo-card *ngIf="!completedTodos.length"></app-void-todo-card>
+</div>

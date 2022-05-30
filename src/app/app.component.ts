@@ -1,10 +1,25 @@
 import { Component } from '@angular/core';
 
+export interface ITodo {
+  textContent: string;
+  isCompleted: boolean;
+  isDeleted: boolean;
+  isEdit: boolean;
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'todo-app';
+
+  constructor () {}
+
+  ngOnInit() {
+    window.onunload = () => {
+      alert('bye')
+    }
+  }
+
 }
