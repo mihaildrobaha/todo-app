@@ -19,6 +19,11 @@ export class TodoCardComponent implements OnInit {
 
   }
 
+  
+  ngOnInit(): void {
+
+  }
+
   openPopupWindow(): void {
     if (this.todo !== null && this.todo.textContent.length === 0 && this.myInputRef !== null) {
       this.myInputRef.nativeElement.focus()
@@ -74,10 +79,6 @@ export class TodoCardComponent implements OnInit {
     if (this.i !== null && this.todo !== null) {
       this.appService.recoverDeletedTodo(this.i, this.todo)
     }
-  }
-
-  ngOnInit(): void {
-
   }
 
 }
