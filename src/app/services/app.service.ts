@@ -37,7 +37,7 @@ export class AppService {
     if (todo.isCompleted === false) {
       this.deletedTodos.push(this.activeTodos[i])
       this.activeTodos.splice(i, 1)
-      } 
+      }
       else {
         this.deletedTodos.push(this.completedTodos[i])
         this.completedTodos.splice(i, 1)

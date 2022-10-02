@@ -17,9 +17,7 @@ export class AppComponent {
   constructor () {}
 
   ngOnInit() {
-    window.onunload = () => {
-      alert('bye')
-    }
+    
   }
 
 }

@@ -21,8 +21,9 @@
     .content{
       color: antiquewhite;
       padding: 0px 15px;
-      font-size: 18px;
+      font-size: 14px;
       cursor: pointer;
+      word-break: break-all;
     }
   }
 }
@@ -44,7 +45,7 @@
   background: linear-gradient(90deg, rgba(255,255,255,0), rgb(21, 63, 13));
 }
 .background-completed{
-  background: linear-gradient(90deg, rgba(255,255,255,0), rgb(64, 73, 8));
+  background: linear-gradient(90deg, rgba(255,255,255,0), rgb(8, 59, 73));
 }
 .background-deleted{
   background: linear-gradient(90deg, rgba(255,255,255,0), rgb(136, 136, 136));

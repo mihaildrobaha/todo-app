@@ -14,8 +14,6 @@ export class InputComponent implements OnInit {
 
   addTodo(): void {
     this.appService.addTodo(this.textInput);
-    localStorage.setItem('todo', this.textInput);
-    console.log(localStorage.getItem('todo'))
     this.textInput = '';
   }
 
